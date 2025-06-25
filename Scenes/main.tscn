@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4lgou3oi46le"]
+
+[ext_resource type="Script" uid="uid://dc7qpumfjjcks" path="res://Scripts/game_logic.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://d234uhey01fuv" path="res://Scenes/paddle.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dbua0vndnaxf5" path="res://Scenes/ball.tscn" id="2_8gbba"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jjvhh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Paddle" parent="." instance=ExtResource("1_bo1nx")]
+position = Vector2(561, 624)
+
+[node name="Ball" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(561, 501)
+
+[node name="Top Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_bo1nx")
+
+[node name="Left Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_8gbba")
+
+[node name="Right Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
+position = Vector2(1152, 648)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_jjvhh")
