@@ -19,15 +19,14 @@ func _process(delta: float) -> void:
 
 func spawn_brick():
 	var viewport_size=get_viewport_rect().size
-	var rows=(viewport_size.x/2 / brick_size.x) # if you add numbers to the end you can increase rows
-	var columns=(viewport_size.y/2 / brick_size.y)+4 #this adds 4 columns to the calculated number
+	var rows = 8
+	var columns=(viewport_size.x/2 / brick_size.x)+9
+	print(viewport_size.x)
 	for col in range(columns):
 		for row in range(rows):
-			var new_brick = brick.instantiate() #adds a new brick from the brick scene
+			var new_brick = brick.instantiate()
 			# sets the position of a brick; The -2 for the x and y reduces gap between bricks
-			# the addition to x pads space from the left to center while the addition to y pads space
+			# the addition to x pads space from the left to center while the addition to y pads space 
 			# from the top to leave gap at top
-			print("col"+str(col))
-			print("row"+str(row))
 			new_brick.global_position = Vector2(((brick_size.x-2) * col+65) , ((brick_size.y-2) * row+20))
 			brick_node.add_child(new_brick)
