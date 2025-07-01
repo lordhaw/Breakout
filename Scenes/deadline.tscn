@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp2mvur26r8gl"]
+
+[ext_resource type="Script" uid="uid://dkgbmxn6s4n0m" path="res://Scripts/deadline.gd" id="1_lry1b"]
+
+[node name="Deadline" type="Area2D"]
+script = ExtResource("1_lry1b")

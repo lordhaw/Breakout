@@ -6,12 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k76ut"]
 size = Vector2(60, 20)
 
-[node name="Brick" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="Brick" type="StaticBody2D"]
 script = ExtResource("1_hqb1c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_f8nvr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["brick"]]
 shape = SubResource("RectangleShape2D_k76ut")

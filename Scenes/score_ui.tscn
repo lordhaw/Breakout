@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://82eprdr5gjbk"]
+
+[ext_resource type="Script" uid="uid://cr81wc0i864lr" path="res://Scenes/score_update.gd" id="1_slsms"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oaniv"]
+font_size = 20
+font_color = Color(0.133196, 0.133196, 0.133196, 1)
+outline_size = 8
+
+[node name="Score UI" type="HBoxContainer"]
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 77.0
+offset_bottom = 31.0
+
+[node name="Score Label" type="Label" parent="."]
+layout_mode = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_oaniv")
+script = ExtResource("1_slsms")

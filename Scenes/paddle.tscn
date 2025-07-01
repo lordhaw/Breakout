@@ -7,7 +7,7 @@
 radius = 5.0
 height = 118.0
 
-[node name="Paddle" type="CharacterBody2D"]
+[node name="Paddle" type="CharacterBody2D" groups=["paddle"]]
 script = ExtResource("1_krcey")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

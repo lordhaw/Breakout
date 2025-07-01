@@ -7,7 +7,6 @@
 radius = 4.0
 
 [node name="Ball" type="CharacterBody2D" groups=["ball"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_ij5cq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
