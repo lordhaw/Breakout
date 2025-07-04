@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://82eprdr5gjbk"]
 
-[ext_resource type="Script" uid="uid://cr81wc0i864lr" path="res://Scenes/score_update.gd" id="1_slsms"]
+[ext_resource type="Script" uid="uid://cr81wc0i864lr" path="res://Scripts/score_update.gd" id="1_slsms"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oaniv"]
 font_size = 20

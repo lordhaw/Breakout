@@ -14,5 +14,10 @@ static func get_brick_size():
 static func hit(body):
 	Global.player_score += 1
 	body.queue_free()
+
+
+	
+	
+	
 	
 	

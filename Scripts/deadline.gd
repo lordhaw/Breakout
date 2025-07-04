@@ -6,8 +6,13 @@ func _ready() -> void:
 	body_entered.connect(deadball)
 	
 func deadball(body):
-	body.queue_free()
-	owner.start_round()
-	
+	if Global.player_lives > 1:
+		Global.player_lives -= 1
+		body.queue_free()
+		owner.start_round()
+	else:
+		print("Game Over")
+		get_tree().quit()
+		
 
 

@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 		global_position.x +=speed
 		direction = "right"
 
-	global_position.x=clamp(global_position.x,80,get_viewport_rect().size.x -80)
+	global_position.x=clamp(global_position.x,40,get_viewport_rect().size.x -40)

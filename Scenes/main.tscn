@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4lgou3oi46le"]
+[gd_scene load_steps=8 format=3 uid="uid://c4lgou3oi46le"]
 
 [ext_resource type="Script" uid="uid://dc7qpumfjjcks" path="res://Scripts/game_logic.gd" id="1_8gbba"]
-[ext_resource type="PackedScene" uid="uid://82eprdr5gjbk" path="res://Scenes/score_ui.tscn" id="2_8gbba"]
-[ext_resource type="PackedScene" uid="uid://c3ga7dijhpjvh" path="res://Scenes/countdown_animation.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://s366cfsucm2t" path="res://Scenes/main_ui.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dp2mvur26r8gl" path="res://Scenes/deadline.tscn" id="4_jjvhh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kry3j"]
@@ -41,12 +40,4 @@ position = Vector2(1152, 648)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_jjvhh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Countdown Label" parent="CanvasLayer" instance=ExtResource("2_jjvhh")]
-offset_left = -17.0
-offset_top = -41.5
-offset_right = -17.0
-offset_bottom = -41.5
-
-[node name="Score UI" parent="CanvasLayer" instance=ExtResource("2_8gbba")]
+[node name="Main UI" parent="." instance=ExtResource("3_8gbba")]
