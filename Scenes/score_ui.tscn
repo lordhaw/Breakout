@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://82eprdr5gjbk"]
+[gd_scene load_steps=4 format=3 uid="uid://82eprdr5gjbk"]
 
+[ext_resource type="FontFile" uid="uid://dylne2l2fxkt" path="res://Sources/Fonts/Phased.otf" id="1_7kmc4"]
 [ext_resource type="Script" uid="uid://cr81wc0i864lr" path="res://Scripts/score_update.gd" id="1_slsms"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oaniv"]
+font = ExtResource("1_7kmc4")
 font_size = 20
 font_color = Color(0.133196, 0.133196, 0.133196, 1)
 outline_size = 8
+outline_color = Color(0.996078, 0.803922, 0, 1)
 
 [node name="Score UI" type="HBoxContainer"]
 offset_left = 1.0

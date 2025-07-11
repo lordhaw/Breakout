@@ -9,8 +9,9 @@ var speed:int=500
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	Global.ball_pos=global_position.x
 	var collision=move_and_collide(velocity*delta)
-	if(collision):
+	if(collision && State.ball_state == "Undocked"):
 		ball_audio.play()
 		velocity=velocity.bounce(collision.get_normal())*1.01
 		if(collision.get_collider().has_method("hit")):

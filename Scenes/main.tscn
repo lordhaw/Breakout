@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4lgou3oi46le"]
+[gd_scene load_steps=9 format=3 uid="uid://c4lgou3oi46le"]
 
 [ext_resource type="Script" uid="uid://dc7qpumfjjcks" path="res://Scripts/game_logic.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dl6tfi73i03dc" path="res://Scenes/background.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://s366cfsucm2t" path="res://Scenes/main_ui.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dp2mvur26r8gl" path="res://Scenes/deadline.tscn" id="4_jjvhh"]
 
@@ -14,6 +15,9 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
+
+[node name="Background" parent="." instance=ExtResource("2_jjvhh")]
+layer = -100
 
 [node name="Deadline" parent="." instance=ExtResource("4_jjvhh")]
 position = Vector2(0, 648)
