@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3uf8e0bgl1f8"]
+
+[ext_resource type="FontFile" uid="uid://dylne2l2fxkt" path="res://Sources/Fonts/Phased.otf" id="1_eoghk"]
+[ext_resource type="Texture2D" uid="uid://bqdxpok1hw5js" path="res://Sprites/Standart Button Normal 6.png" id="2_14u15"]
+[ext_resource type="Script" uid="uid://cr81wc0i864lr" path="res://Scripts/score_update.gd" id="2_rjluv"]
+[ext_resource type="Texture2D" uid="uid://0qlp2m1brla8" path="res://Sprites/Standart Button Active 6.png" id="3_j3ryr"]
+[ext_resource type="Texture2D" uid="uid://bn8rqgy8bsu5f" path="res://Sprites/Standart Button Hover 6.png" id="4_rjluv"]
+[ext_resource type="Script" uid="uid://by5lyc4n1sgy8" path="res://Scripts/gameover_restart.gd" id="5_j3ryr"]
+[ext_resource type="Script" uid="uid://6mygh8ex8r83" path="res://Scripts/gameover_quit.gd" id="6_rjluv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjtdd"]
+font = ExtResource("1_eoghk")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.996078, 0.803922, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uylih"]
+font = ExtResource("1_eoghk")
+font_size = 54
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.996078, 0.803922, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3817r"]
+font = ExtResource("1_eoghk")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.996078, 0.803922, 0, 1)
+
+[node name="Game Over" type="CanvasLayer"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.509804)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 91.0
+offset_right = 333.0
+offset_bottom = 194.0
+grow_horizontal = 2
+
+[node name="Game Over Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Game Over"
+label_settings = SubResource("LabelSettings_gjtdd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = 174.0
+offset_right = 180.0
+offset_bottom = 277.0
+grow_horizontal = 2
+
+[node name="Score Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_uylih")
+horizontal_alignment = 1
+script = ExtResource("2_rjluv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 446.0
+offset_top = 286.0
+offset_right = 486.0
+offset_bottom = 326.0
+theme_override_constants/separation = 10
+
+[node name="Restart Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_14u15")
+texture_pressed = ExtResource("3_j3ryr")
+texture_hover = ExtResource("4_rjluv")
+script = ExtResource("5_j3ryr")
+
+[node name="Restart Label" type="Label" parent="VBoxContainer/Restart Button"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 196.0
+offset_bottom = 43.0
+text = "Restart"
+label_settings = SubResource("LabelSettings_3817r")
+horizontal_alignment = 1
+
+[node name="Quit Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_14u15")
+texture_pressed = ExtResource("3_j3ryr")
+texture_hover = ExtResource("4_rjluv")
+script = ExtResource("6_rjluv")
+
+[node name="Quit Label" type="Label" parent="VBoxContainer/Quit Button"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 196.0
+offset_bottom = 43.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_3817r")
+horizontal_alignment = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://s366cfsucm2t"]
+[gd_scene load_steps=5 format=3 uid="uid://s366cfsucm2t"]
 
 [ext_resource type="PackedScene" uid="uid://c3ga7dijhpjvh" path="res://Scenes/countdown_animation.tscn" id="1_kqhp1"]
 [ext_resource type="PackedScene" uid="uid://82eprdr5gjbk" path="res://Scenes/score_ui.tscn" id="2_f28it"]
 [ext_resource type="PackedScene" uid="uid://s5csrlryxnql" path="res://Scenes/lives_ui.tscn" id="3_f28it"]
+[ext_resource type="Texture2D" uid="uid://vd6ymbkeoks2" path="res://Sources/grey_rounded_rectangle.png" id="4_dcbcb"]
 
 [node name="Main UI" type="CanvasLayer"]
 
@@ -13,13 +14,34 @@ offset_right = -17.0
 offset_bottom = -41.5
 
 [node name="Score UI" parent="." instance=ExtResource("2_f28it")]
-offset_left = 3.0
-offset_top = -8.0
-offset_right = 115.0
-offset_bottom = 32.0
+offset_left = 7.0
+offset_top = -5.0
+offset_right = 119.0
+offset_bottom = 35.0
 
 [node name="Lives UI" parent="." instance=ExtResource("3_f28it")]
 offset_left = 1032.0
-offset_top = -8.0
+offset_top = -5.0
 offset_right = 1144.0
-offset_bottom = 32.0
+offset_bottom = 35.0
+
+[node name="Left Wall" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.0399997, 16.4)
+texture = ExtResource("4_dcbcb")
+
+[node name="Right Wall" type="TextureRect" parent="."]
+offset_left = 1150.0
+offset_right = 1214.0
+offset_bottom = 40.0
+scale = Vector2(0.0399997, 16.4)
+texture = ExtResource("4_dcbcb")
+
+[node name="Top Wall" type="TextureRect" parent="."]
+offset_left = 1152.0
+offset_right = 1216.0
+offset_bottom = 40.0
+rotation = 1.5708
+scale = Vector2(0.0344231, 29.5155)
+texture = ExtResource("4_dcbcb")

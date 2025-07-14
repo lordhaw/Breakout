@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://de2yyufa27ihx"]
+
+[ext_resource type="Texture2D" uid="uid://bqdxpok1hw5js" path="res://Sprites/Standart Button Normal 6.png" id="1_5doqj"]
+[ext_resource type="FontFile" uid="uid://dylne2l2fxkt" path="res://Sources/Fonts/Phased.otf" id="1_s7gfc"]
+[ext_resource type="Texture2D" uid="uid://0qlp2m1brla8" path="res://Sprites/Standart Button Active 6.png" id="2_s7gfc"]
+[ext_resource type="Texture2D" uid="uid://bn8rqgy8bsu5f" path="res://Sprites/Standart Button Hover 6.png" id="3_v8bcc"]
+[ext_resource type="Script" uid="uid://c6elr461a3uph" path="res://Scripts/inst_close.gd" id="5_v8bcc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8bcc"]
+font = ExtResource("1_s7gfc")
+font_size = 32
+font_color = Color(0.996078, 0.803922, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3oir0"]
+font = ExtResource("1_s7gfc")
+font_size = 25
+font_color = Color(0.996078, 0.803922, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxjdl"]
+font = ExtResource("1_s7gfc")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.996078, 0.803922, 0, 1)
+
+[node name="Instructions" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Instructions"
+label_settings = SubResource("LabelSettings_v8bcc")
+horizontal_alignment = 1
+
+[node name="Spacer 1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Instruction Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Yet Another...Brick Breaker is a Breakout clone.  Another in
+a long series of Breakout clones made as learn to
+program projects.  Ths particular one is made in Godot.
+
+To play use the a/d keys or left/right arrow keys to move your
+paddle side to side.  Use the space bar to launch the ball at
+the beginning of a round.  The goal is to destroy all the 
+blocks on the screen where you then go to the next round.
+Try to beat your best score!"
+label_settings = SubResource("LabelSettings_3oir0")
+
+[node name="Spacer 2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close Button" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("1_5doqj")
+texture_pressed = ExtResource("2_s7gfc")
+texture_hover = ExtResource("3_v8bcc")
+script = ExtResource("5_v8bcc")
+
+[node name="Close Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Close Button"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 3.0
+offset_right = 173.0
+offset_bottom = 43.0
+text = "Close"
+label_settings = SubResource("LabelSettings_bxjdl")

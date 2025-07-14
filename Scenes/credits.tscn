@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://x7er32jv8v02"]
+
+[ext_resource type="FontFile" uid="uid://dylne2l2fxkt" path="res://Sources/Fonts/Phased.otf" id="1_1bamb"]
+[ext_resource type="Texture2D" uid="uid://bqdxpok1hw5js" path="res://Sprites/Standart Button Normal 6.png" id="2_xelri"]
+[ext_resource type="Texture2D" uid="uid://0qlp2m1brla8" path="res://Sprites/Standart Button Active 6.png" id="3_uah1q"]
+[ext_resource type="Texture2D" uid="uid://bn8rqgy8bsu5f" path="res://Sprites/Standart Button Hover 6.png" id="4_7emq5"]
+[ext_resource type="Script" uid="uid://c5o7lb606qi0w" path="res://Scripts/credit_close.gd" id="5_xelri"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_803yc"]
+font = ExtResource("1_1bamb")
+font_size = 25
+font_color = Color(0.996078, 0.803922, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wbrc"]
+font = ExtResource("1_1bamb")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.996078, 0.803922, 0, 1)
+
+[node name="Credits" type="CanvasLayer"]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Created By Lordhaw
+
+Sounds, design and coding by lordhaw
+
+Brick, Paddle and Ball assets modified from Kenny Puzzle Pack
+
+Button assets from Dark Miko UI Asset Pack by Wenrexa
+
+Music from Ultimate Music Pack - Free by Swarajthegreat
+
+Shader modified from electric grid shader by forgetname 
+
+Created as a learning project in godot"
+label_settings = SubResource("LabelSettings_803yc")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Close Button" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("2_xelri")
+texture_pressed = ExtResource("3_uah1q")
+texture_hover = ExtResource("4_7emq5")
+script = ExtResource("5_xelri")
+
+[node name="Close Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Close Button"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 3.0
+offset_right = 172.0
+offset_bottom = 43.0
+text = "Close"
+label_settings = SubResource("LabelSettings_1wbrc")
