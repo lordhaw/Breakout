@@ -48,7 +48,7 @@ func start_round():
 func spawn_brick():
 	
 	var viewport_size=get_viewport_rect().size
-	var rows = 8
+	var rows = 8 
 	var columns=(viewport_size.x/2 / brick_size.x)+8
 	for col in range(columns):
 		for row in range(rows):

@@ -22,7 +22,6 @@ func start_game():
 	var old_bricks=get_tree().get_nodes_in_group("brick")
 	if(old_bricks != null):
 		for brick in old_bricks:
-			print(brick)
 			brick.queue_free()
 	#restart game
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
