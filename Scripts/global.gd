@@ -5,7 +5,6 @@ extends Node
 var player_score: int = 0
 var player_lives: int = 3
 var brick_count: int = 0
-var hit_brick_pos: Vector2
 var ball_pos: float
 var paddle_direction: String
 

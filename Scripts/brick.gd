@@ -28,8 +28,6 @@ static func hit(body):
 			Global.player_score += 1
 	
 	# removes brick hit
-	Global.hit_brick_pos=body.global_position
-	State.brick_state = "Hit"
 	body.queue_free()
 	Global.brick_count -= 1
 

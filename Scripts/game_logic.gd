@@ -2,7 +2,6 @@ extends Node2D
 
 # Declare Variables
 var brick = preload("res://Scenes/brick.tscn")
-var powerup = preload("res://Scenes/powerup.tscn")
 var ball:PackedScene=load("res://Scenes/ball.tscn")
 var paddle:PackedScene=load("res://Scenes/paddle.tscn")
 var countdown_animation: AnimationPlayer
@@ -18,7 +17,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	check_ball_state(delta)
-	#check_brick_state()
 	check_brick_count()
 	
 func start_game():
@@ -163,8 +161,3 @@ func check_brick_count():
 		spawn_brick()
 		start_round()
 
-func check_brick_state():
-	if(State.brick_state=="Hit"):
-		new_powerup = powerup.instantiate()
-		new_powerup.global_position=Global.hit_brick_pos
-		get_tree().root.get_child(0).add_child(new_powerup)
