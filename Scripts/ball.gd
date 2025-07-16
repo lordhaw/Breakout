@@ -26,4 +26,24 @@ func ball_spec(delta: float):
 		velocity=velocity.bounce(collision.get_normal())*1.001 #multiplier speeds up ball slowly after collision
 		if(collision.get_collider().has_method("hit")):
 			var this_brick=collision.get_collider()
+			var brick_sprite=this_brick.get_node("Sprite2D")
+			var brick_texture=brick_sprite.texture.resource_path
+			match brick_texture:
+				"res://Sprites/blue_rounded_rectangle.png":
+					State.brick_state="Blue"
+				"res://Sprites/dkblue_rounded_rectangle.png":
+					State.brick_state="DkBlue"
+				"res://Sprites/dkgrey_rounded_rectangle.png":
+					State.brick_state="DkGrey"
+				"res://Sprites/dkpurple_rounded_rectangle.png":
+					State.brick_state="DkPurple"
+				"res://Sprites/green_rounded_rectangle.png":
+					State.brick_state="Green"
+				"res://Sprites/orange_rounded_rectangle.png":
+					State.brick_state="Orange"
+				"res://Sprites/red_rounded_rectangle.png":
+					State.brick_state="Red"
+				"res://Sprites/yellow_rounded_rectangle.png":
+					State.brick_state="Yellow"
+
 			collision.get_collider().hit(this_brick)
