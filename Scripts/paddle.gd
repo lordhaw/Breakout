@@ -24,7 +24,7 @@ func paddle_spec(delta):
 		direction = "right"
 		Global.paddle_direction = "Right"
 
-	if(Input.is_action_pressed("Shoot")):
+	if(Input.is_action_pressed("Shoot") && State.ball_state != "Undocked"):
 		State.ball_state = "Launched"
 
 	if(Input.is_action_pressed("Boom")):
