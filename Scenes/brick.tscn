@@ -10,6 +10,7 @@ size = Vector2(60, 20)
 script = ExtResource("1_hqb1c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["brick"]]
+position = Vector2(1, 0)
 texture = ExtResource("2_hqb1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["brick"]]
